@@ -14,7 +14,7 @@ return {
         lua = { "stylua" },
         fish = { "fish_indent" },
         sh = { "shfmt" },
-        php = { "pint" },
+        php = {},
         blade = { "blade-formatter", "rustywind" },
         python = { "black" },
         javascript = { "prettierd" },
@@ -46,6 +46,13 @@ return {
             "vendor/bin/pint",
           }, "pint"),
           args = { "$FILENAME" },
+          stdin = false,
+        },
+        rector = {
+          command = util.find_executable({
+            "vendor/bin/rector",
+          }, "rector"),
+          args = { "process", "$FILENAME" },
           stdin = false,
         },
       },
