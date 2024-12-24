@@ -14,9 +14,6 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map("n", "<leader>gd",
-  function()
-    Util.float_term({ "lazydocker", "-f", Util.get_root() .. "docker-compose.yml" },
-      { cwd = Util.get_root(), esc_esc = false })
-  end,
-  { desc = "LazyDocker (root dir)" })
+map("n", "<leader>gd", function()
+  LazyVim.terminal("lazydocker", { esc_esc = false, ctrl_hjkl = false })
+end, { desc = "LazyDocker (root dir)" })
