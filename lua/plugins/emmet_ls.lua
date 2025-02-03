@@ -4,6 +4,15 @@ return {
     opts = {
       -- @type lspconfig.options
       servers = {
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pyflakes = { enabled = false },
+              },
+            },
+          },
+        },
         emmet_ls = {
           filetypes = {
             "astro",
